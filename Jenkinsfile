@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "docker.io/dheerajvalecha/springboot-demo"
-        IMAGE_TAG = "${BUILD_NUMBER}"
+        IMAGE_TAG  = "${BUILD_NUMBER}"
     }
 
     stages {
@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build JAR') {
             steps {
                 sh 'mvn clean package'
             }
@@ -23,13 +23,19 @@ pipeline {
 
         stage('Build Image') {
             steps {
-                sh 'podman build -t $IMAGE_NAME:$IMAGE_TAG .'
+                sh 'sudo podman build -t $IMAGE_NAME:$IMAGE_TAG .'
+            }
+        }
+
+        stage('List Images') {
+            steps {
+                sh 'sudo podman images'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'echo Deployment will be added in next lab'
+                echo 'Deployment stage will be added later'
             }
         }
     }
