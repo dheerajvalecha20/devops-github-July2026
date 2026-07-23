@@ -8,7 +8,7 @@ public class HelloController {
 
     @GetMapping("/")
     public String home() {
-        return "Hello from Spring Boot running on Jenkins and Kubernetes!";
+        return "Hello from CI/CD Pipeline Build " + System.currentTimeMillis();
     }
 
 }
