@@ -8,7 +8,7 @@ public class HelloController {
 
     @GetMapping("/")
       public String home() {
-      return "Hello from Spring Boot Version 8";
+      return "Hello from Spring Boot Version 9";
     }
 
 
