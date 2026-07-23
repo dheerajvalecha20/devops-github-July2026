@@ -23,7 +23,9 @@ pipeline {
 
         stage('Build Image') {
             steps {
-                sh 'sudo podman build -t $IMAGE_NAME:$IMAGE_TAG .'
+                sh '''
+                sudo podman build -t ${IMAGE_NAME}:${IMAGE_TAG} .
+                '''
             }
         }
 
@@ -60,8 +62,8 @@ pipeline {
             steps {
                 sh '''
                 sudo kubectl set image deployment/springboot-demo \
-                springboot-demo=docker.io/dheerajvalecha/springboot-demo:${BUILD_NUMBER} \
-                -n dev
+                springboot-demo=${IMAGE_NAME}:${IMAGE_TAG} \
+        -n dev
 
                 sudo kubectl rollout status deployment/springboot-demo -n dev
                 '''
