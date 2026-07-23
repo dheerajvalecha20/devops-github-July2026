@@ -56,9 +56,15 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy to Kubernetes') {
             steps {
-                echo 'Deployment stage will be added later'
+                sh '''
+                sudo kubectl set image deployment/springboot-demo \
+                springboot-demo=docker.io/dheerajvalecha/springboot-demo:${BUILD_NUMBER} \
+                -n dev
+
+                sudo kubectl rollout status deployment/springboot-demo -n dev
+                '''
             }
         }
 
