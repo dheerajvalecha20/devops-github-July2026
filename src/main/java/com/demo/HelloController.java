@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @GetMapping("/")
-    public String home() {
-        return "Hello from CI/CD Pipeline Build " + System.currentTimeMillis();
+      public String home() {
+      return "Hello from Spring Boot Version 8";
     }
+
 
 }
