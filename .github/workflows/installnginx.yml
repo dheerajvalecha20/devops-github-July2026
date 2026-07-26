@@ -1,0 +1,24 @@
+name: Install nginx
+
+on:
+  push:
+
+jobs:
+  installation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: update package
+        run: apt update
+
+    
+      - name: Install Nginx
+        run: apt install -y nginx
+
+  
+      - name: check version
+        run: nginx -v 
+
+      - name: check nginx binary
+        run: which nginx
+       
