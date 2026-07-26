@@ -12,7 +12,18 @@ jobs:
         run: sudo apt-get update 
 
       - name: Install Apache2
-        run: sudo apt install apache2
+        run: sudo apt install -y apache2
 
       - name: start services
         run: sudo systemctl start apache2
+ 
+    Install-nginx:
+      runs-on: ubuntu-latest
+
+      steps: 
+      - name: update packages
+        run: sudo apt-get update
+
+      - name: Install nginx
+        run: sudo apt install -y nginx
+        
