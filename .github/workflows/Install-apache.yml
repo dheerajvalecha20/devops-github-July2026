@@ -1,0 +1,18 @@
+name: Install apache2 
+
+on: 
+  push:
+
+jobs:
+    Installation-Apache2:
+      runs-on: ubuntu-latest
+
+      steps: 
+      - name: update packeges
+        run: sudo apt-get update 
+
+      - name: Install Apache2
+        run: sudo apt install apache2
+
+      - name: start services
+        run: sudo systemctel restart apache2
