@@ -1,0 +1,21 @@
+name: Learning github
+
+on:
+  push:
+
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: show date
+        run: date
+
+      - name: show current dir
+        run: pwd
+
+      - name: List files
+        run: ls -l 
+      
+  
