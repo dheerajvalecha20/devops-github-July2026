@@ -1,0 +1,27 @@
+name: Install apache2
+
+on:
+  push:
+
+jobs:
+  install-apache2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: update package 
+        run: sudo apt update
+
+     steps:
+      - name: install apache2
+        run: sudo apt install -y apache2
+
+      steps:
+       - name: start service
+         run: |
+           sudo systemctl start apache2
+           sudo systemctl status apache2
+
+       steps: 
+        - name: verify apache is running
+          run: |
+          curl -I http://localhost
