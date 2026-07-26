@@ -9,11 +9,11 @@ jobs:
 
     steps:
       - name: update package
-        run: apt update
+        run: sudo apt update
 
     
       - name: Install Nginx
-        run: apt install -y nginx
+        run: sudo apt install -y nginx
 
   
       - name: check version
