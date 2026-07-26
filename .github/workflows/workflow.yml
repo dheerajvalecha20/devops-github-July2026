@@ -9,4 +9,4 @@ jobs:
 
     steps:
      - name: print message
-       run: echo: "Hello Github Actions"
+       run: echo "Hello Github Actions"
