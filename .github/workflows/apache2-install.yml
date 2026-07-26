@@ -11,7 +11,7 @@ jobs:
       - name: update package 
         run: sudo apt update
 
-     steps:
+     
       - name: install apache2
         run: sudo apt install -y apache2
 
