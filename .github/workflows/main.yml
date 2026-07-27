@@ -1,0 +1,18 @@
+name: ls-file demo
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  ls-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: show files
+        run: ls -l 
+      
+        
+    
