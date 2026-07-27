@@ -1,0 +1,14 @@
+name: list script
+
+on:
+  push:
+
+jobs:
+  ls-script-new:
+    runs-on: ubuntu-new
+
+    steps:
+     - uses: actions/checkout@v4
+
+     - name: list files
+       run: ./scripts/ls-script.sh
