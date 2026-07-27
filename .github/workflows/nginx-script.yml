@@ -11,5 +11,5 @@ jobs:
      - uses: actions/checkout@v4
 
      - name: run the installation script-nginx
-       run: ./install-nginx.sh
+       run: ./.github/workflows/install-nginx.sh
     
