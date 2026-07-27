@@ -1,0 +1,15 @@
+name: nginx-script-demo
+
+on:
+  push:
+
+jobs:
+  install-shell-nginx:
+    runs-on: ubuntu-latest:
+
+  steps:
+   - uses: actions/checkout@v4
+
+   - name: run the installation script-nginx
+     run: ./install-nginx.sh
+    
